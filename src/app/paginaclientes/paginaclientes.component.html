@@ -1,0 +1,41 @@
+
+<div class="container">
+<button class="btn btn-primary mt-5 text-center" (click)="maisSessenta()">{{nomeBotao}}</button>
+    <table class="table">
+        <thead class="thead-dark text-center">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Sobrenome</th>
+        <th scope="col">CPF</th>
+        <th scope="col">Idade</th>
+        <th scope="col">Endereco</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let joao of clientes">
+
+      <!-- Todos -->
+      <tr class="text-center" *ngIf="control == true"> 
+        <th scope="row">{{joao.id}}</th>
+        <td>{{joao.nome}}</td>
+        <td>{{joao.sobrenome}}</td>
+        <td>{{joao.idade}}</td>
+        <td>{{joao.cpf}}</td>
+        <td>{{joao.endereco}}</td>
+      </tr> 
+
+      <!-- Acima de sessenta -->
+
+      <tr class="text-center" *ngIf="control != true && joao.idade >= 60"> 
+        <th scope="row">{{joao.id}}</th>
+        <td>{{joao.nome}}</td>
+        <td>{{joao.sobrenome}}</td>
+        <td>{{joao.idade}}</td>
+        <td>{{joao.cpf}}</td>
+        <td>{{joao.endereco}}</td>
+      </tr>      
+
+    </tbody>
+  </table> 
+ 
+</div>
